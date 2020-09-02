@@ -1,0 +1,33 @@
+{
+    "family": "sample-node-microservice-task-definition",
+    "cpu": "256",
+    "memory": "512",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "executionRoleArn": "???",
+    "taskRoleArn": "???",
+    "containerDefinitions": [
+      {
+        "name": "sample-node-microservice-ecs-service-container",
+        "image": "<IMAGE_TAG>",
+        "portMappings": [
+          {
+            "containerPort": 3000,
+            "protocol": "http"
+          }
+        ],
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+            "awslogs-group": "sample-node-microservice-log-group",
+            "awslogs-region": "ap-south-1",
+            "awslogs-stream-prefix": "sample-node-microservice-log-stream"
+          }
+        },
+        "essential": true
+      }
+    ]
+  }
+  

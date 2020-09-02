@@ -1,0 +1,24 @@
+./sample-node-microservice-iac/shell/create_code_commit_repo_for_cicd.sh
+
+Edit CF Template for following,
+ -- add step for creating S3 bucket which will be used by CodePipeline as artifactStore
+ -- add step for creating sample-node-microservice-code-deploy-application
+ -- add step for creating sample-node-microservice-deployment-group
+ -- add step for creating sample-node-microservice-code-pipeline
+ -- add step for setting Bucket Policy on S3 bucket which will be used by CodePipeline as artifactStore
+
+./sample-node-microservice-iac/shell/launch_aws_stack_formation
+
+./sample-node-microservice-iac/shell/create_and_upload_latest_image_to_ECR
+
+./sample-node-microservice-iac/shell/start_ecs_service
+
+test API output in Browser or Postman
+
+./sample-node-microservice-iac/shell/stop_ecs_service
+
+./sample-node-microservice-iac/shell/delete_latest_image_from_ECR
+
+./sample-node-microservice-iac/shell/launch_aws_stack_deletion
+
+./sample-node-microservice-iac/shell/delete_code_commit_repo_for_cicd.sh

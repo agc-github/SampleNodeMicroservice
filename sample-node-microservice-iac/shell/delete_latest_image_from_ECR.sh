@@ -1,0 +1,1 @@
+aws ecr batch-delete-image --repository-name sample-node-microservice/service --image-ids imageTag=latest
