@@ -1,0 +1,1 @@
+aws deploy create-deployment-group --cli-input-json file://./sample-node-microservice-iac/shell_input/code-deploy-create-deployment-group-input.json > ./sample-node-microservice-iac/shell_output/create-code-deploy-deployment-group-output.json

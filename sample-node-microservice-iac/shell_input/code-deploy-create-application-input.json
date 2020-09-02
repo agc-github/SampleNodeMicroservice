@@ -1,0 +1,4 @@
+{
+    "applicationName": "sample-node-microservice-code-deploy-application",
+    "computePlatform": "ECS"
+}

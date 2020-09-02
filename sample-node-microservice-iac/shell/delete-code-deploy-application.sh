@@ -1,0 +1,1 @@
+aws deploy delete-application --application-name sample-node-microservice-code-deploy-application

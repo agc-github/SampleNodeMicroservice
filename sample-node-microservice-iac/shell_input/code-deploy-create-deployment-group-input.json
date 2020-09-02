@@ -1,0 +1,61 @@
+{
+    "applicationName": "sample-node-microservice-code-deploy-application",
+    "deploymentGroupName": "sample-node-microservice-deployment-group",
+    "deploymentConfigName": "CodeDeployDefault.ECSAllAtOnce",
+    "serviceRoleArn": "arn:aws:iam::488314167089:role/CodeDeployECSRole",
+    "alarmConfiguration": {
+        "enabled": false,
+        "ignorePollAlarmFailure": false,
+        "alarms": []
+    },
+    "autoRollbackConfiguration": {
+        "enabled": true,
+        "events": [
+            "DEPLOYMENT_FAILURE"
+        ]
+    },
+    "deploymentStyle": {
+        "deploymentType": "BLUE_GREEN",
+        "deploymentOption": "WITH_TRAFFIC_CONTROL"
+    },
+    "blueGreenDeploymentConfiguration": {
+        "terminateBlueInstancesOnDeploymentSuccess": {
+            "action": "TERMINATE",
+            "terminationWaitTimeInMinutes": 5
+        },
+        "deploymentReadyOption": {
+            "actionOnTimeout": "CONTINUE_DEPLOYMENT",
+            "waitTimeInMinutes": 0
+        }
+    },
+    "loadBalancerInfo": {
+        "targetGroupPairInfoList": [
+            {
+                "targetGroups": [
+                    {
+                        "name": "sample-node-microservice-TG-1"
+                    },
+                    {
+                        "name": "sample-node-microservice-TG-2"
+                    }
+            ],
+                "prodTrafficRoute": {
+                    "listenerArns": [
+                        "arn:aws:elasticloadbalancing:ap-south-1:488314167089:listener/app/sampl-Appli-1X9BQ0WLARXG7/a8f7e18b8ba6506a/3cea494f09ce6d30"
+                    ]
+                },
+                "testTrafficRoute": {
+                    "listenerArns": [
+                        "arn:aws:elasticloadbalancing:ap-south-1:488314167089:listener/app/sampl-Appli-1X9BQ0WLARXG7/a8f7e18b8ba6506a/df22d5e985fe3fde"
+                    ]
+                }
+            }
+        ]
+    },
+    "ecsServices": [
+        {
+            "serviceName": "sample-node-microservice-ecs-service-container",
+            "clusterName": "sample-node-microservice-ecs-cluster"
+        }
+    ]
+}

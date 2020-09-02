@@ -236,46 +236,6 @@ Resources:
       - ContainerName: "sample-node-microservice-ecs-service-container"
         ContainerPort: 3000
         TargetGroupArn: !Ref TargetGroup1
-  CodeDeployApplication:
-    Type: AWS::CodeDeploy::Application
-    Properties:
-      ApplicationName: "sample-node-microservice-code-deploy-application"
-      ComputePlatform: ECS  
-  CodeDeployDeploymentGroup:
-    Type: 'AWS::CodeDeploy::DeploymentGroup'
-    DependsOn: CodeDeployApplication
-    Properties:
-      ApplicationName: !Ref CodeDeployApplication
-      AeploymentGroupName: sample-node-microservice-deployment-group
-      DeploymentConfigName: CodeDeployDefault.ECSAllAtOnce
-      ServiceRoleArn: !Sub 'arn:aws:iam::${AWS::AccountId}:role/CodeDeployECSRole'
-      AutoRollbackConfiguration:
-        Enabled: true
-        Events:
-        - DEPLOYMENT_FAILURE
-      DeploymentStyle:
-        DeploymentType: BLUE_GREEN
-        DeploymentOption: WITH_TRAFFIC_CONTROL
-      LoadBalancerInfo:
-        TargetGroupPairInfoList:
-        - TargetGroups:
-          - Name: !Ref TargetGroup1
-          - Name: !Ref TargetGroup2
-          ProdTrafficRoute:
-            ListenerArns:
-            - !Ref ListenerForPort80
-          TestTrafficRoute:
-            ListenerArns:
-            - ! ListenerForPort8080
-      ComputePlatform: ECS
-      EcsServices:
-      - ServiceName: !Ref ECSService
-        ClusterName: !Ref ECSCluster
-  CICDPipelineArtifactStoreBucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: sample-node-microservice-cicd-bucket
-      AccessControl: 'Private'
   # This is an IAM role which authorizes ECS to manage specified AWS resources
   ECSServiceRole:
     Type: AWS::IAM::Role
@@ -517,18 +477,3 @@ Outputs:
     Value: !GetAtt 'ECSTaskRole.Arn'
     Export:
       Name: !Join [ ':', [ !Ref 'AWS::StackName', 'ECSTaskRole' ] ]
-  CodeDeployApplication:
-    Description: REPLACE_ME_CODE_DEPLOY_APPLICATION
-    Value: !Ref 'CodeDeployApplication'
-    Export:
-      Name: !Join [ ':', [ !Ref 'AWS::StackName', 'CodeDeployApplication' ] ]
-  CodeDeployDeploymentGroup:
-    Description: REPLACE_ME_CODE_DEPLOY_DEPLOYMENT_GROUP
-    Value: !Ref 'CodeDeployDeploymentGroup'
-    Export:
-      Name: !Join [ ':', [ !Ref 'AWS::StackName', 'CodeDeployDeploymentGroup' ] ]
-  CICDPipelineArtifactStoreBucket:
-    Description: REPLACE_ME_CODE_DEPLOY_DEPLOYMENT_GROUP
-    Value: !GetAtt 'CICDPipelineArtifactStoreBucket.Arn'
-    Export:
-      Name: !Join [ ':', [ !Ref 'AWS::StackName', 'CICDPipelineArtifactStoreBucket' ] ]
