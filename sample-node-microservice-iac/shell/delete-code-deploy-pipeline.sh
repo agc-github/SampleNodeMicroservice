@@ -1,0 +1,1 @@
+aws codepipeline delete-pipeline --name sample-node-microservice-code-pipeline > ./sample-node-microservice-iac/shell_output/delete-code-deploy-pipeline-output.json

@@ -1,0 +1,98 @@
+{
+    "pipeline": {
+        "name": "sample-node-microservice-code-pipeline",
+        "roleArn": "arn:aws:iam::488314167089:role/sample-node-microservice-s-CodePipelineServiceRole-110KODPYQEBSR",
+        "artifactStore": {
+            "type": "S3",
+            "location": "sample-node-microservice-pipeline-artifact-store-bucket"
+        },
+        "stages": [
+            {
+                "name": "Source",
+                "actions": [
+                    {
+                        "name": "Source",
+                        "actionTypeId": {
+                            "category": "Source",
+                            "owner": "AWS",
+                            "provider": "CodeCommit",
+                            "version": "1"
+                        },
+                        "runOrder": 1,
+                        "configuration": {
+                            "BranchName": "master",
+                            "PollForSourceChanges": "true",
+                            "RepositoryName": "sample-node-microservice-cicd-repository"
+                        },
+                        "outputArtifacts": [
+                            {
+                                "name": "SourceArtifact"
+                            }
+                        ],
+                        "inputArtifacts": [],
+                        "region": "ap-south-1",
+                        "namespace": "SourceVariables"
+                    },
+                    {
+                        "name": "Image",
+                        "actionTypeId": {
+                            "category": "Source",
+                            "owner": "AWS",
+                            "provider": "ECR",
+                            "version": "1"
+                        },
+                        "runOrder": 1,
+                        "configuration": {
+                            "ImageTag": "latest",
+                            "RepositoryName": "sample-node-microservice/service"
+                        },
+                        "outputArtifacts": [
+                            {
+                                "name": "MyImage"
+                            }
+                        ],
+                        "inputArtifacts": [],
+                        "region": "ap-south-1"
+                    }
+                ]
+            },
+            {
+                "name": "Deploy",
+                "actions": [
+                    {
+                        "name": "Deploy",
+                        "actionTypeId": {
+                            "category": "Deploy",
+                            "owner": "AWS",
+                            "provider": "CodeDeployToECS",
+                            "version": "1"
+                        },
+                        "runOrder": 1,
+                        "configuration": {
+                            "AppSpecTemplateArtifact": "SourceArtifact",
+                            "AppSpecTemplatePath": "appspec.yaml",
+                            "ApplicationName": "sample-node-microservice-code-deploy-application",
+                            "DeploymentGroupName": "sample-node-microservice-deployment-group",
+                            "Image1ArtifactName": "MyImage",
+                            "Image1ContainerName": "IMAGE_TAG",
+                            "TaskDefinitionTemplateArtifact": "SourceArtifact",
+                            "TaskDefinitionTemplatePath": "taskdef.json"
+                        },
+                        "outputArtifacts": [],
+                        "inputArtifacts": [
+                            {
+                                "name": "SourceArtifact"
+                            },
+                            {
+                                "name": "MyImage"
+                            }
+                        ],
+                        "region": "ap-south-1",
+                        "namespace": "DeployVariables"
+                    }
+                ]
+            }
+        ],
+        "version": 1
+    }
+}

@@ -236,11 +236,6 @@ Resources:
       - ContainerName: "sample-node-microservice-ecs-service-container"
         ContainerPort: 3000
         TargetGroupArn: !Ref TargetGroup1
-  CodePipelineArtifactStoreBucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: sample-node-microservice-pipeline-artifact-store-bucket
-      AccessControl: 'Private'      
   CodePipelineServiceRole:
     Type: AWS::IAM::Role
     Properties:
@@ -590,12 +585,12 @@ Outputs:
     Export:
       Name: !Join [ ':', [ !Ref 'AWS::StackName', 'TargetGroup2' ] ]
   ListenerForPort80:
-    Description: REPLACE_ME_LISTENER_FOR_PORT_80
+    Description: REPLACE_ME_PORT_80_LISTENER_ARN
     Value: !Ref 'ListenerForPort80'
     Export:
       Name: !Join [ ':', [ !Ref 'AWS::StackName', 'ListenerForPort80' ] ]
   ListenerForPort8080:
-    Description: REPLACE_ME_LISTENER_FOR_PORT_8080
+    Description: REPLACE_ME_PORT_8080_LISTENER_ARN
     Value: !Ref 'ListenerForPort8080'
     Export:
       Name: !Join [ ':', [ !Ref 'AWS::StackName', 'ListenerForPort8080' ] ]
@@ -619,9 +614,4 @@ Outputs:
     Value: !GetAtt 'CodePipelineServiceRole.Arn'
     Export:
       Name: !Join [ ':', [ !Ref 'AWS::StackName', 'CodePipelineServiceRole' ] ]
-  CodePipelineArtifactStoreBucket:
-    Description: REPLACE_ME_CODE_PIPELINE_ARTIFACT_STORE_BUCKET
-    Value: !Ref CodePipelineArtifactStoreBucket
-    Export:
-      Name: !Join [ ':', [ !Ref 'AWS::StackName', 'CodePipelineArtifactStoreBucket' ] ]
     

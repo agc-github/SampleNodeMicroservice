@@ -1,15 +1,12 @@
+./sample-node-microservice-iac/shell/create-cloud-formation-stack.sh
+
+update values in taskdef.json
+update values in code-deploy-create-deployment-group-input
+update values in create-code-deploy-pipeline-input
+
 ./sample-node-microservice-iac/shell/create_code_commit_repo_for_cicd.sh
 
-Edit CF Template for following,
- -- add step for creating S3 bucket which will be used by CodePipeline as artifactStore
- -- add step for creating sample-node-microservice-code-deploy-application
- -- add step for creating sample-node-microservice-deployment-group
- -- add step for creating sample-node-microservice-code-pipeline
- -- add step for setting Bucket Policy on S3 bucket which will be used by CodePipeline as artifactStore
-
-./sample-node-microservice-iac/shell/launch_aws_stack_formation.sh
-
-./sample-node-microservice-iac/shell/create-s3-pipeline-artifactstore-bucket.sh
+./sample-node-microservice-iac/shell/create-s3-pipeline-artifact-store-bucket.sh
 
 ./sample-node-microservice-iac/shell/create-code-deploy-application.sh
 
@@ -19,9 +16,13 @@ Edit CF Template for following,
 
 ./sample-node-microservice-iac/shell/start_ecs_service.sh
 
+./sample-node-microservice-iac/shell/create-code-deploy-pipeline.sh
+
 test API output in Browser or Postman
 
 ./sample-node-microservice-iac/shell/stop_ecs_service.sh
+
+./sample-node-microservice-iac/shell/delete-code-deploy-pipeline.sh
 
 ./sample-node-microservice-iac/shell/delete-code-deploy-deployment-group.sh
 
@@ -29,8 +30,8 @@ test API output in Browser or Postman
 
 ./sample-node-microservice-iac/shell/delete_latest_image_from_ECR.sh
 
-./sample-node-microservice-iac/shell/delete-s3-pipeline-artifactstore-bucket.sh
+./sample-node-microservice-iac/shell/delete-s3-pipeline-artifact-store-bucket.sh
 
-./sample-node-microservice-iac/shell/launch_aws_stack_deletion.sh
+./sample-node-microservice-iac/shell/delete-cloud-formation-stack.sh
 
 ./sample-node-microservice-iac/shell/delete_code_commit_repo_for_cicd.sh

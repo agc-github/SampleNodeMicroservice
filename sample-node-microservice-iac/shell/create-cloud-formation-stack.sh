@@ -1,0 +1,1 @@
+aws cloudformation create-stack --stack-name sample-node-microservice-stack --capabilities CAPABILITY_NAMED_IAM --template-body file://./sample-node-microservice-iac/cf_templates/cloudformation-stack.yaml > ./sample-node-microservice-iac/shell_output/create-cloud-formation-stack-output.json

@@ -1,0 +1,1 @@
+aws s3 rb --force s3://sample-node-microservice-pipeline-artifact-store-bucket > ./sample-node-microservice-iac/shell_output/delete-s3-pipeline-artifact-store-bucket-output.json

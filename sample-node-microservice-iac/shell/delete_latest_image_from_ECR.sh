@@ -1,1 +1,1 @@
-aws ecr batch-delete-image --repository-name sample-node-microservice/service --image-ids imageTag=latest
+aws ecr batch-delete-image --repository-name sample-node-microservice/service --image-ids imageTag=latest > ./sample-node-microservice-iac/shell_output/delete_latest_image_from_ECR-output.json
