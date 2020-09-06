@@ -1,0 +1,1 @@
+aws iam create-policy --cli-input-json file://./sample-node-microservice-iac/shell_input/create-policy-for-eventbridge-input.json > ./sample-node-microservice-iac/shell_output/create-policy-for-eventbridge-output.json

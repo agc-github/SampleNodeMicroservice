@@ -1,0 +1,11 @@
+{
+    "Rule": "sample-node-microservice-rule-to-watch-ECR-and-trigger-pipeline",
+    "EventBusName": "default",
+    "Targets": [
+        {
+            "Id": "codepipeline-sample-node-microservice-code-pipeline",
+            "Arn": "arn:aws:codepipeline:ap-south-1:488314167089:sample-node-microservice-code-pipeline",
+            "RoleArn": "arn:aws:iam::488314167089:role/sample-node-microservice-role-for-eventbridge-to-invoke-pipeline"
+        }
+    ]
+}

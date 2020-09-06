@@ -1,0 +1,1 @@
+aws iam create-role --cli-input-json file://./sample-node-microservice-iac/shell_input/create-role-for-eventbridge-input.json > ./sample-node-microservice-iac/shell_output/create-role-for-eventbridge-output.json

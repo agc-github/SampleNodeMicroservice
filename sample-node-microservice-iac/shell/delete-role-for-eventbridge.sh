@@ -1,0 +1,1 @@
+aws iam delete-role --cli-input-json file://./sample-node-microservice-iac/shell_input/delete-role-for-eventbridge-input.json > ./sample-node-microservice-iac/shell_output/delete-role-for-eventbridge-output.json

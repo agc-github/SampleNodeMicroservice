@@ -1,0 +1,1 @@
+aws events remove-targets --cli-input-json file://./sample-node-microservice-iac/shell_input/detach-target-from-eventbridge-rule-input.json > ./sample-node-microservice-iac/shell_output/detach-target-from-eventbridge-rule-output.json

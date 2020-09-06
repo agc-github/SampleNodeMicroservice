@@ -1,7 +1,7 @@
 {
     "pipeline": {
         "name": "sample-node-microservice-code-pipeline",
-        "roleArn": "arn:aws:iam::488314167089:role/sample-node-microservice-s-CodePipelineServiceRole-110KODPYQEBSR",
+        "roleArn": "arn:aws:iam::488314167089:role/sample-node-microservice-s-CodePipelineServiceRole-1UWMKSAS4JUV9",
         "artifactStore": {
             "type": "S3",
             "location": "sample-node-microservice-pipeline-artifact-store-bucket"

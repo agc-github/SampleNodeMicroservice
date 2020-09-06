@@ -1,0 +1,5 @@
+{
+    "RoleName": "sample-node-microservice-role-for-eventbridge-to-invoke-pipeline",
+    "AssumeRolePolicyDocument": "{\"Version\": \"2012-10-17\",\"Statement\":[{\"Sid\": \"ForEventBridgeToInvokePipeline\",\"Effect\": \"Allow\",\"Principal\": {\"Service\": \"events.amazonaws.com\"},\"Action\": \"sts:AssumeRole\"}]}",
+    "Description": "this service role allows EventBridge to invoke CodePipeline"
+}

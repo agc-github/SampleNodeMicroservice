@@ -1,8 +1,9 @@
 ./sample-node-microservice-iac/shell/create-cloud-formation-stack.sh
 
-update values in taskdef.json
-update values in code-deploy-create-deployment-group-input
-update values in create-code-deploy-pipeline-input
+UPDATE values in taskdef.json
+UPDATE values in code-deploy-create-deployment-group-input.json
+UPDATE values in create-code-deploy-pipeline-input.json
+UPDATE values in elb-delete-load-balancer-listeners-input.json
 
 ./sample-node-microservice-iac/shell/create_code_commit_repo_for_cicd.sh
 
@@ -18,9 +19,44 @@ update values in create-code-deploy-pipeline-input
 
 ./sample-node-microservice-iac/shell/create-code-deploy-pipeline.sh
 
+./sample-node-microservice-iac/shell/create-role-for-eventbridge.sh
+
+./sample-node-microservice-iac/shell/create-policy-for-eventbridge.sh
+
+UPDATE values in delete-policy-for-eventbridge-input.json
+UPDATE values in delete-role-for-eventbridge-input.json
+UPDATE values in attach-eventbridge-role-with-managed-policy-input.json
+UPDATE values in create-eventbridge-rule-input.json
+
+./sample-node-microservice-iac/shell/attach-eventbridge-role-with-managed-policy.sh
+
+./sample-node-microservice-iac/shell/create-eventbridge-rule.sh
+
+UPDATE values in attach-target-to-eventbridge-rule-input.json
+
+./sample-node-microservice-iac/shell/attach-target-to-eventbridge-rule.sh
+
+UPDATE values in detach-target-from-eventbridge-rule-input.json -- to get ID execute "aws events list-targets-by-rule --rule RULE_NAME"
+
 test API output in Browser or Postman
 
+make change in Node API
+
+./sample-node-microservice-iac/shell/create_and_upload_latest_image_to_ECR.sh
+
+test API output in Browser or Postman -- this time we should be able to get new output
+
 ./sample-node-microservice-iac/shell/stop_ecs_service.sh
+
+./sample-node-microservice-iac/shell/detach-target-from-eventbridge-rule.sh
+
+./sample-node-microservice-iac/shell/delete-eventbridge-rule.sh
+
+./sample-node-microservice-iac/shell/detach-eventbridge-role-with-managed-policy.sh
+
+./sample-node-microservice-iac/shell/delete-role-for-eventbridge.sh
+
+./sample-node-microservice-iac/shell/delete-policy-for-eventbridge.sh
 
 ./sample-node-microservice-iac/shell/delete-code-deploy-pipeline.sh
 
@@ -31,6 +67,8 @@ test API output in Browser or Postman
 ./sample-node-microservice-iac/shell/delete_latest_image_from_ECR.sh
 
 ./sample-node-microservice-iac/shell/delete-s3-pipeline-artifact-store-bucket.sh
+
+./sample-node-microservice-iac/shell/delete-load-balancer-listeners.sh
 
 ./sample-node-microservice-iac/shell/delete-cloud-formation-stack.sh
 

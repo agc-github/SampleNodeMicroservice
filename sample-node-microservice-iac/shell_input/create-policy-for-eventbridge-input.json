@@ -1,0 +1,7 @@
+{
+    "PolicyName": "sample-node-microservice-policy-for-eventbridge-to-invoke-pipeline",
+    "PolicyDocument": "{\"Version\": \"2012-10-17\",\"Statement\":[{\"Effect\": \"Allow\",\"Action\": [\"codepipeline:StartPipelineExecution\"],\"Resource\":[\"arn:aws:codepipeline:ap-south-1:488314167089:sample-node-microservice-code-pipeline\"]}]}",
+    "Description": "this policy allows EventBridge to invoke specific CodePipeline"
+}
+
+

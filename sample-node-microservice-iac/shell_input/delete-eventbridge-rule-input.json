@@ -1,0 +1,4 @@
+{
+    "Name": "sample-node-microservice-rule-to-watch-ECR-and-trigger-pipeline",
+    "EventBusName": "default"
+}

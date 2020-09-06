@@ -1,0 +1,10 @@
+{
+    "Name": "sample-node-microservice-rule-to-watch-ECR-and-trigger-pipeline",
+    "EventPattern": "{\"source\": [\"aws.ecr\"],\"detail-type\":[\"ECR Image Action\"],\"detail\":{\"action-type\":[\"PUSH\"],\"result\": [\"SUCCESS\"],\"repository-name\": [\"sample-node-microservice/service\"],\"image-tag\": [\"latest\"]}}",
+    "State": "ENABLED",
+    "Description": "rule to monitor specific ECR repo and trigger Pipeline when image with latest tag is pushed",
+    "RoleArn": "arn:aws:iam::488314167089:role/sample-node-microservice-role-for-eventbridge-to-invoke-pipeline",
+    "EventBusName": "default"
+}
+
+

@@ -1,0 +1,1 @@
+aws events delete-rule --cli-input-json file://./sample-node-microservice-iac/shell_input/delete-eventbridge-rule-input.json > ./sample-node-microservice-iac/shell_output/delete-eventbridge-rule-output.json

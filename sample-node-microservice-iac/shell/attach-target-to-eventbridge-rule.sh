@@ -1,0 +1,1 @@
+aws events put-targets --cli-input-json file://./sample-node-microservice-iac/shell_input/attach-target-to-eventbridge-rule-input.json > ./sample-node-microservice-iac/shell_output/attach-target-to-eventbridge-rule-output.json

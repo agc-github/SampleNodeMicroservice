@@ -181,7 +181,7 @@ Resources:
     Properties: 
       DefaultActions:
         - Type: forward
-          TargetGroupArn: !Ref TargetGroup2
+          TargetGroupArn: !Ref TargetGroup1
       LoadBalancerArn: !Ref ApplicationLoadBalancer
       Port: 8080
       Protocol: "HTTP"
@@ -569,11 +569,16 @@ Outputs:
     Value: !GetAtt 'LogGroup.Arn'
     Export:
       Name: !Join [ ':', [ !Ref 'AWS::StackName', 'LogGroup' ] ]
-  ApplicationLoadBalancer:
+  ApplicationLoadBalancerDNSName:
     Description: REPLACE_ME_ALB_DNS_NAME
     Value: !GetAtt 'ApplicationLoadBalancer.DNSName'
     Export:
-      Name: !Join [ ':', [ !Ref 'AWS::StackName', 'ApplicationLoadBalancer' ] ]
+      Name: !Join [ ':', [ !Ref 'AWS::StackName', 'ApplicationLoadBalancer', 'DNSName' ] ]
+  ApplicationLoadBalancerName:
+    Description: REPLACE_ME_ALB_NAME
+    Value: !GetAtt 'ApplicationLoadBalancer.LoadBalancerName'
+    Export:
+      Name: !Join [ ':', [ !Ref 'AWS::StackName', 'ApplicationLoadBalancer', 'LoadBalancerName' ] ]    
   TargetGroup1:
     Description: REPLACE_ME_TARGET_GROUP_1_NAME
     Value: !GetAtt 'TargetGroup1.TargetGroupName'

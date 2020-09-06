@@ -41,12 +41,12 @@
             ],
                 "prodTrafficRoute": {
                     "listenerArns": [
-                        "arn:aws:elasticloadbalancing:ap-south-1:488314167089:listener/app/sampl-Appli-117XUDNWKFS44/661764f5dc4ff7b9/5853058197be8c28"
+                        "arn:aws:elasticloadbalancing:ap-south-1:488314167089:listener/app/sampl-Appli-OO7VNU678RDL/639f0b2265296644/fa76da925d9b0075"
                     ]
                 },
                 "testTrafficRoute": {
                     "listenerArns": [
-                        "arn:aws:elasticloadbalancing:ap-south-1:488314167089:listener/app/sampl-Appli-117XUDNWKFS44/661764f5dc4ff7b9/5ea5c81a0d824c92"
+                        "arn:aws:elasticloadbalancing:ap-south-1:488314167089:listener/app/sampl-Appli-OO7VNU678RDL/639f0b2265296644/4b7f750c4fe6e7b5"
                     ]
                 }
             }

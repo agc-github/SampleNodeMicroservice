@@ -1,0 +1,4 @@
+{
+    "RoleName": "sample-node-microservice-role-for-eventbridge-to-invoke-pipeline",
+    "PolicyArn": "arn:aws:iam::488314167089:policy/sample-node-microservice-policy-for-eventbridge-to-invoke-pipeline"
+}

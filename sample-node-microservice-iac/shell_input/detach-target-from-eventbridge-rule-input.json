@@ -1,0 +1,7 @@
+{
+    "Rule": "sample-node-microservice-rule-to-watch-ECR-and-trigger-pipeline",
+    "EventBusName": "default",
+    "Ids": [
+        "codepipeline-sample-node-microservice-code-pipeline"
+    ]
+}
