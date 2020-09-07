@@ -1,1 +1,2 @@
-aws elb delete-load-balancer-listeners --cli-input-json file://./sample-node-microservice-iac/shell_input/elb-delete-load-balancer-listeners-input.json > ./sample-node-microservice-iac/shell_output/elb-delete-load-balancer-listeners-output.json
+aws elbv2 delete-listener --cli-input-json file://./sample-node-microservice-iac/shell_input/elb-delete-load-balancer-listener-for-port-80-input.json > ./sample-node-microservice-iac/shell_output/elb-delete-load-balancer-listener-for-port-80-output.json
+aws elbv2 delete-listener --cli-input-json file://./sample-node-microservice-iac/shell_input/elb-delete-load-balancer-listener-for-port-8080-input.json > ./sample-node-microservice-iac/shell_output/elb-delete-load-balancer-listener-for-port-8080-output.json

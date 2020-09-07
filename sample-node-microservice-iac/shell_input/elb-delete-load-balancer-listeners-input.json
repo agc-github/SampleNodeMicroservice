@@ -1,6 +1,0 @@
-{
-    "LoadBalancerName": "sampl-Appli-OO7VNU678RDL",
-    "LoadBalancerPorts": [
-        80, 8080
-    ]
-}
