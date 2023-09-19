@@ -1,1 +1,1 @@
-aws ecr batch-delete-image --repository-name sample-node-microservice/service --image-ids imageTag=latest > ./sample-node-microservice-iac/shell_output/delete_latest_image_from_ECR-output.json
+docker run --rm -ti -v ~/.aws:/root/.aws -v ./:/aws amazon/aws-cli ecr batch-delete-image --repository-name sample-node-microservice/service --image-ids imageTag=latest > ./sample-node-microservice-iac/shell_output/delete_latest_image_from_ECR-output.json

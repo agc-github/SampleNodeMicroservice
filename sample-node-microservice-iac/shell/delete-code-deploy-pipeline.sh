@@ -1,1 +1,1 @@
-aws codepipeline delete-pipeline --name sample-node-microservice-code-pipeline > ./sample-node-microservice-iac/shell_output/delete-code-deploy-pipeline-output.json
+docker run --rm -ti -v ~/.aws:/root/.aws -v ./:/aws amazon/aws-cli codepipeline delete-pipeline --name sample-node-microservice-code-pipeline > ./sample-node-microservice-iac/shell_output/delete-code-deploy-pipeline-output.json

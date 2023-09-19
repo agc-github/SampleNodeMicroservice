@@ -1,1 +1,1 @@
-aws iam delete-policy --cli-input-json file://./sample-node-microservice-iac/shell_input/delete-policy-for-eventbridge-input.json > ./sample-node-microservice-iac/shell_output/delete-policy-for-eventbridge-output.json
+docker run --rm -ti -v ~/.aws:/root/.aws -v ./:/aws amazon/aws-cli iam delete-policy --cli-input-json file://./sample-node-microservice-iac/shell_input/delete-policy-for-eventbridge-input.json > ./sample-node-microservice-iac/shell_output/delete-policy-for-eventbridge-output.json

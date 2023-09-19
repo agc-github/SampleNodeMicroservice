@@ -1,1 +1,1 @@
-aws ecs update-service --cluster sample-node-microservice-ecs-cluster --service sample-node-microservice-ecs-service-container --desired-count 1 > ./sample-node-microservice-iac/shell_output/start-ecs-service-output.json
+docker run --rm -ti -v ~/.aws:/root/.aws -v ./:/aws amazon/aws-cli ecs update-service --cluster sample-node-microservice-ecs-cluster --service sample-node-microservice-ecs-service-container --desired-count 1 > ./sample-node-microservice-iac/shell_output/start-ecs-service-output.json

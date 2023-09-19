@@ -1,1 +1,1 @@
-aws ecs update-service --cluster sample-node-microservice-ecs-cluster --service sample-node-microservice-ecs-service-container --desired-count 0 > /dev/null
+docker run --rm -ti -v ~/.aws:/root/.aws -v ./:/aws amazon/aws-cli ecs update-service --cluster sample-node-microservice-ecs-cluster --service sample-node-microservice-ecs-service-container --desired-count 0 > /dev/null

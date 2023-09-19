@@ -1,1 +1,1 @@
-aws cloudformation delete-stack --stack-name sample-node-microservice-stack > ./sample-node-microservice-iac/shell_output/delete-cloud-formation-stack-output.json
+docker run --rm -ti -v ~/.aws:/root/.aws -v ./:/aws amazon/aws-cli cloudformation delete-stack --stack-name sample-node-microservice-stack > ./sample-node-microservice-iac/shell_output/delete-cloud-formation-stack-output.json

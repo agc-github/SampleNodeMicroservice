@@ -1,1 +1,1 @@
-aws events put-targets --cli-input-json file://./sample-node-microservice-iac/shell_input/attach-target-to-eventbridge-rule-input.json > ./sample-node-microservice-iac/shell_output/attach-target-to-eventbridge-rule-output.json
+docker run --rm -ti -v ~/.aws:/root/.aws -v ./:/aws amazon/aws-cli events put-targets --cli-input-json file://./sample-node-microservice-iac/shell_input/attach-target-to-eventbridge-rule-input.json > ./sample-node-microservice-iac/shell_output/attach-target-to-eventbridge-rule-output.json

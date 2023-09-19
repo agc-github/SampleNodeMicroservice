@@ -1,1 +1,1 @@
-aws deploy create-application --cli-input-json file://./sample-node-microservice-iac/shell_input/code-deploy-create-application-input.json > ./sample-node-microservice-iac/shell_output/code-deploy-create-application-output.json
+docker run --rm -ti -v ~/.aws:/root/.aws -v ./:/aws amazon/aws-cli deploy create-application --cli-input-json file://./sample-node-microservice-iac/shell_input/code-deploy-create-application-input.json > ./sample-node-microservice-iac/shell_output/code-deploy-create-application-output.json

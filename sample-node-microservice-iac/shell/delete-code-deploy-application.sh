@@ -1,1 +1,1 @@
-aws deploy delete-application --application-name sample-node-microservice-code-deploy-application > ./sample-node-microservice-iac/shell_output/delete-code-deploy-application-output.json
+docker run --rm -ti -v ~/.aws:/root/.aws -v ./:/aws amazon/aws-cli deploy delete-application --application-name sample-node-microservice-code-deploy-application > ./sample-node-microservice-iac/shell_output/delete-code-deploy-application-output.json

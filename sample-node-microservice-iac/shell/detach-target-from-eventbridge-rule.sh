@@ -1,1 +1,1 @@
-aws events remove-targets --cli-input-json file://./sample-node-microservice-iac/shell_input/detach-target-from-eventbridge-rule-input.json > ./sample-node-microservice-iac/shell_output/detach-target-from-eventbridge-rule-output.json
+docker run --rm -ti -v ~/.aws:/root/.aws -v ./:/aws amazon/aws-cli events remove-targets --cli-input-json file://./sample-node-microservice-iac/shell_input/detach-target-from-eventbridge-rule-input.json > ./sample-node-microservice-iac/shell_output/detach-target-from-eventbridge-rule-output.json
