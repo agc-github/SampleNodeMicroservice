@@ -3,7 +3,7 @@
 UPDATE values in taskdef.json
 UPDATE values in code-deploy-create-deployment-group-input.json
 UPDATE values in create-code-deploy-pipeline-input.json
-UPDATE values in elb-delete-load-balancer-listeners-input.json
+UPDATE values in elb-delete-load-balancer-listener-for-port-<PORT_NUMBER>-input.json
 
 ./sample-node-microservice-iac/shell/create_code_commit_repo_for_cicd.sh
 
