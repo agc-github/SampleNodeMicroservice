@@ -141,6 +141,8 @@ Resources:
         - !Ref PublicSubnetOne
         - !Ref PublicSubnetTwo
       Type: "application"
+    DependsOn:
+      - GatewayAttachement
   TargetGroup1:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties: 
@@ -188,27 +190,27 @@ Resources:
   TaskDefinition:
     Type: AWS::ECS::TaskDefinition
     Properties:
-      family: sample-node-microservice-task-definition
-      cpu: '256'
-      memory: '512'
-      networkMode: awsvpc
-      requiresCompatibilities:
+      Family: sample-node-microservice-task-definition
+      Cpu: '256'
+      Memory: '512'
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
       - FARGATE
-      executionRoleArn: !Ref ECSServiceRole
-      taskRoleArn: !Ref ECSTaskRole
-      containerDefinitions:
-      - name: sample-node-microservice-ecs-service-container
-        image: "488314167089.dkr.ecr.ap-south-1.amazonaws.com/sample-node-microservice/service:latest"
-        portMappings:
-        - containerPort: 3000
-          protocol: http
-        logConfiguration:
-          logDriver: awslogs
-          options:
+      ExecutionRoleArn: !Ref ECSServiceRole
+      TaskRoleArn: !Ref ECSTaskRole
+      ContainerDefinitions:
+      - Name: sample-node-microservice-ecs-service-container
+        Image: "488314167089.dkr.ecr.ap-south-1.amazonaws.com/sample-node-microservice/service:latest"
+        PortMappings:
+        - ContainerPort: 3000
+          Protocol: http
+        LogConfiguration:
+          LogDriver: awslogs
+          Options:
             awslogs-group: sample-node-microservice-log-group
             awslogs-region: ap-south-1
             awslogs-stream-prefix: sample-node-microservice-log-stream
-        essential: true
+        Essential: true
   ECSService:
     Type: AWS::ECS::Service
     DependsOn:
