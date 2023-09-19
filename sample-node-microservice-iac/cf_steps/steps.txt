@@ -1,9 +1,19 @@
 ./sample-node-microservice-iac/shell/create-cloud-formation-stack.sh
 
-UPDATE values in taskdef.json
-UPDATE values in code-deploy-create-deployment-group-input.json
-UPDATE values in create-code-deploy-pipeline-input.json
-UPDATE values in elb-delete-load-balancer-listener-for-port-<PORT_NUMBER>-input.json
+UPDATE taskdef.json
+    - executionRoleArn and taskRoleArn values from AWS Mgt. Console --> Amazon Elastic Container Service --> Task definitions --> sample-node-microservice-task-definition
+
+UPDATE code-deploy-create-deployment-group-input.json
+    - serviceRoleArn value from AWS Mgt. Console --> IAM --> Roles --> ...CodeDeployECSRole...
+
+UPDATE code-deploy-create-deployment-group-input.json
+    - listenerArns values at 2 places from AWS Mgt. Console --> EC2 --> Load balancers --> <created ApplicationLoadBalancer> --> HTTP:80 listener and HTTP:8080 listener
+
+UPDATE create-code-deploy-pipeline-input.json
+    - roleArn value from AWS Mgt. Console --> IAM --> Roles --> ...CodePipelineServiceRole...
+
+UPDATE 2 files elb-delete-load-balancer-listener-for-port-<PORT_NUMBER>-input.json
+    - ListenerArn values in 2 files from AWS Mgt. Console --> EC2 --> Load balancers --> <created ApplicationLoadBalancer> --> HTTP:80 listener and HTTP:8080 listener
 
 ./sample-node-microservice-iac/shell/create_code_commit_repo_for_cicd.sh
 
