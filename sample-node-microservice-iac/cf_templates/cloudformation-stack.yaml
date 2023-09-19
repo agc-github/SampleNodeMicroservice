@@ -238,6 +238,19 @@ Resources:
       - ContainerName: "sample-node-microservice-ecs-service-container"
         ContainerPort: 3000
         TargetGroupArn: !Ref TargetGroup1
+  CodeDeployECSRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: [codedeploy.amazonaws.com]
+            Action: ['sts:AssumeRole']
+      Path: /
+      Description: service role that grants CodeDeploy access to Amazon ECS
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AWSCodeDeployRoleForECS
   CodePipelineServiceRole:
     Type: AWS::IAM::Role
     Properties:
@@ -621,4 +634,9 @@ Outputs:
     Value: !GetAtt 'CodePipelineServiceRole.Arn'
     Export:
       Name: !Join [ ':', [ !Ref 'AWS::StackName', 'CodePipelineServiceRole' ] ]
+  CodeDeployECSRole:
+    Description: REPLACE_ME_CODE_DEPLOY_ECS_ROLE_ARN
+    Value: !GetAtt 'CodeDeployECSRole.Arn'
+    Export:
+      Name: !Join [ ':', [ !Ref 'AWS::StackName', 'CodeDeployECSRole' ] ]
     
