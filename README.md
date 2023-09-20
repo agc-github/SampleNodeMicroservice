@@ -21,7 +21,8 @@ AWS Services / Resources used in this exercise,
 - S3
 - VPC, SecurityGroups, ApplicationLoadBalancer, Public Subnet, Internet Gateway, Route Table
 
-Where to start -- please see "steps.txt" file under sample-node-microservice-iac/cf_steps folder to get the idea of ALL steps that are executed in a SEQUENCE 
+Where to start?
+- please see "steps.txt" file under sample-node-microservice-iac/cf_steps folder to get the idea of ALL steps that are executed in a SEQUENCE 
 
 Please note,
 - while making this repo "Public" in Sep 2023, I did a quick re-testing of this implementation and it was observed that a bug had arised (Ref: commit # a3cd3ab). So, I have updated code for that bug fixing along with some minor write-up updates for making things more clear for any person going through this implementation.
