@@ -2,7 +2,7 @@
     "applicationName": "sample-node-microservice-code-deploy-application",
     "deploymentGroupName": "sample-node-microservice-deployment-group",
     "deploymentConfigName": "CodeDeployDefault.ECSAllAtOnce",
-    "serviceRoleArn": "arn:aws:iam::488314167089:role/CodeDeployECSRole",
+    "serviceRoleArn": "arn:aws:iam::147629156133:role/sample-node-microservice-stack-CodeDeployECSRole-qBWShDL91qti",
     "alarmConfiguration": {
         "enabled": false,
         "ignorePollAlarmFailure": false,
@@ -41,12 +41,12 @@
             ],
                 "prodTrafficRoute": {
                     "listenerArns": [
-                        "arn:aws:elasticloadbalancing:ap-south-1:488314167089:listener/app/sampl-Appli-APF5E511WKP/b12e94e8d3dc9951/a22cc449c39bce77"
+                        "arn:aws:elasticloadbalancing:ap-south-1:147629156133:listener/app/sampl-Appli-1TWBNRMORPYGP/65cecd023c74c22b/360a54fc0532ee03"
                     ]
                 },
                 "testTrafficRoute": {
                     "listenerArns": [
-                        "arn:aws:elasticloadbalancing:ap-south-1:488314167089:listener/app/sampl-Appli-APF5E511WKP/b12e94e8d3dc9951/e2d15d8582936446"
+                        "arn:aws:elasticloadbalancing:ap-south-1:147629156133:listener/app/sampl-Appli-1TWBNRMORPYGP/65cecd023c74c22b/634917cf558f2719"
                     ]
                 }
             }

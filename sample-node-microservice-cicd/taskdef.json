@@ -6,8 +6,8 @@
     "requiresCompatibilities": [
       "FARGATE"
     ],
-    "executionRoleArn": "arn:aws:iam::488314167089:role/sample-node-microservice-stack-ECSServiceRole-17N33ZDWA3VS0",
-    "taskRoleArn": "arn:aws:iam::488314167089:role/sample-node-microservice-stack-ECSTaskRole-1BEUOL4QAD5T6",
+    "executionRoleArn": "arn:aws:iam::147629156133:role/sample-node-microservice-stack-ECSServiceRole-vqoPjUiLvfP1",
+    "taskRoleArn": "arn:aws:iam::147629156133:role/sample-node-microservice-stack-ECSTaskRole-fpWHkUF7T2jo",
     "containerDefinitions": [
       {
         "name": "sample-node-microservice-ecs-service-container",
