@@ -200,7 +200,7 @@ Resources:
       TaskRoleArn: !Ref ECSTaskRole
       ContainerDefinitions:
       - Name: sample-node-microservice-ecs-service-container
-        Image: "488314167089.dkr.ecr.ap-south-1.amazonaws.com/sample-node-microservice/service:latest"
+        Image: "147629156133.dkr.ecr.ap-south-1.amazonaws.com/sample-node-microservice/service:latest"
         PortMappings:
         - ContainerPort: 3000
           Protocol: http
